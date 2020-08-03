@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "banco-santander01"
+    }
+  },
+  "defaultProject": "banco-santander01",
+  "cli": {
+    "analytics": "d2dd8dac-3634-47bf-825a-24595f1182a1"
+  }
 }
