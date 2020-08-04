@@ -12,11 +12,11 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$banco-santander01-primary: mat-palette($mat-indigo);
-$banco-santander01-accent: mat-palette($mat-pink, A200, A100, A400);
+$banco-santander01-primary: mat-palette($mat-red, 800);
+$banco-santander01-accent: mat-palette($mat-red, 800);
 
 // The warn palette is optional (defaults to red).
-$banco-santander01-warn: mat-palette($mat-red);
+$banco-santander01-warn: mat-palette($mat-red,800);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
@@ -32,4 +32,5 @@ $banco-santander01-theme: mat-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($banco-santander01-theme);
+
 

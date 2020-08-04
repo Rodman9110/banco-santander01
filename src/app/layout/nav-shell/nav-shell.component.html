@@ -1,0 +1,19 @@
+<mat-sidenav-container class="sidenav-container">
+  
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <img src="assets/img/icons/santander-portada.png" width="200" height="60" alt="">
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
