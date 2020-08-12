@@ -10,12 +10,14 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
+import { BuzonDashboardComponent } from './buzon-dashboard/buzon-dashboard.component';
 
 
 
 
 @NgModule({
-  declarations: [AriaPersonalDashboardComponent, LoginFormComponent],
+  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent],
   imports: [
     CommonModule,
     MatGridListModule,
@@ -29,6 +31,6 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule
     
   ],
-  exports: [AriaPersonalDashboardComponent, LoginFormComponent]
+  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent]
 })
 export class SharedModule { }

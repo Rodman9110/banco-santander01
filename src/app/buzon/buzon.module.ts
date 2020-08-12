@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { BuzonRoutingModule } from './buzon-routing.module';
+import { BuzonComponent } from './buzon.component';
 import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [BuzonComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule,
+    BuzonRoutingModule,
     SharedModule
   ]
 })
-export class HomeModule { }
+export class BuzonModule { }

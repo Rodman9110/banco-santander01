@@ -17,5 +17,9 @@
   z-index: 1;
   background: red;
 }
+nav{
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
