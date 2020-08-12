@@ -11,9 +11,29 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <img src="assets/img/icons/santander-portada.png" width="200" height="60" alt="">
-    </mat-toolbar>
-    <router-outlet></router-outlet>
 
+      <!-- <a mat-list-item routerLink="profile"> <mat-icon aria-hidden="false" aria-label="">local_post_office</mat-icon>Buzon</a> -->
+
+
+      <nav >
+        <button mat-button routerLink="home" ><mat-icon aria-hidden="false" aria-label="">home</mat-icon> Home</button>
+        <button mat-button routerLink="profile" ><mat-icon aria-hidden="false" aria-label="">local_post_office</mat-icon> Buzon</button>
+        <button mat-button routerLink="aria-personal" ><mat-icon aria-hidden="false" aria-label="">person</mat-icon>Area Peresonal </button>
+      </nav>
+      
+      
+      
+    
+
+
+    </mat-toolbar>
+
+
+
+
+
+    <router-outlet></router-outlet>
+    
     <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>

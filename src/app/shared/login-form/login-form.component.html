@@ -1,0 +1,40 @@
+
+<div  >
+    <img src="assets/img/icons/santa07.png" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
+
+
+
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+<mat-card-content>
+<form id="contactForm" [formGroup]="loginForm"  novalidate (ngSubmit)="ClickVerificationLogin()">
+  <p>
+    <mat-form-field>
+      <input matInput type="text" placeholder="email" formControlName="email" class="form-control"  name="email">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+       <input matInput type="password" placeholder="password" formControlName="password" class="form-control"  name="password">       
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+  <a  (click)="PageRegister()">Regístrate ahora</a>
+  <div class="button">
+    
+    <button 
+    type="submit"
+    id="btnSubmit" 
+    mat-raised-button color="primary">
+    Login
+  </button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>
+
+</div>
