@@ -12,12 +12,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
 import { BuzonDashboardComponent } from './buzon-dashboard/buzon-dashboard.component';
+import { LoadingComponent } from './loading/loading.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
 
 @NgModule({
-  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent],
+  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent],
   imports: [
     CommonModule,
     MatGridListModule,
@@ -28,9 +30,10 @@ import { BuzonDashboardComponent } from './buzon-dashboard/buzon-dashboard.compo
     LayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressSpinnerModule
     
   ],
-  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent]
+  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent]
 })
 export class SharedModule { }
