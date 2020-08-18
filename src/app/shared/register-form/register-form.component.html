@@ -1,0 +1,74 @@
+<div  >
+  <img src="assets/img/icons/santa12.png" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
+
+<mat-card>
+    <mat-card-title><img src="assets/img/icons/santanderIcono.png"  width="100px" height="100px"></mat-card-title>
+<mat-card-content>
+<form id="contactForm" [formGroup]="registerForm"  novalidate (ngSubmit)="ClickSaveRegistry()">
+  <p>
+    <mat-form-field appearance="outline">
+        <input matInput type="text" placeholder="First Name" formControlName="first_name" class="form-control"  name="first_name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+        <input matInput type="text" placeholder="Last Name" formControlName="last_name" class="form-control"  name="last_name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <input matInput type="text" placeholder="DNI" formControlName="dni" class="form-control"  name="dni">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+       <input matInput type="password" placeholder="Password" formControlName="password" class="form-control"  name="password">       
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <input matInput type="text" placeholder="Email" formControlName="email" class="form-control"  name="email">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <textarea rows="3" cols="50" matInput placeholder="Direction" formControlName="direction" class="form-control"  name="direction"></textarea>
+      <!-- <input matInput type="text" placeholder="Direction" formControlName="direction" class="form-control"  name="direction"> -->
+    </mat-form-field>
+  </p>
+  
+ 
+  
+   <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Country</mat-label>
+      <mat-select  formControlName="id_nationality">
+        <mat-option *ngFor="let option of countries "  value="{{option.id}}"><p><img src="https://www.countryflags.io/{{option.code}}/shiny/32.png" alt="" class="flags"> {{option.name}}</p> </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p> 
+  
+
+ 
+
+
+   <p *ngIf="error" class="error">
+    {{ error }}
+  </p> 
+
+  <button mat-button  (click)="BackLogin()">Back Login</button>
+  <div class="button">
+    
+    <button 
+    type="submit"
+    id="btnSubmit" 
+    mat-raised-button color="primary">
+    Register
+  </button>
+  </div>
+
+</form>
+</mat-card-content>
+
+</mat-card>
+</div>

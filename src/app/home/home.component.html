@@ -1,3 +1,11 @@
-<app-home-dashboard></app-home-dashboard>
+<app-home-dashboard
+*ngIf="accounts$ | async as accounts; else empty"
+[accounts]="accounts"
+
+></app-home-dashboard>
+
+<ng-template #empty>
+    <app-loading></app-loading>
+</ng-template> 
 
 

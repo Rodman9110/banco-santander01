@@ -1,0 +1,32 @@
+
+
+
+
+
+<mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+
+<mat-tab label="Particulares"> 
+    <!-- <div  >
+        <img src="assets/img/icons/santa12.png" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">    -->
+<app-register-form
+*ngIf="countries$ | async as countries; else empty"
+[countries]="countries"
+
+></app-register-form>
+
+<!-- </div> -->
+<ng-template #empty>
+    <app-loading></app-loading>
+</ng-template> 
+
+
+</mat-tab>
+<mat-tab label="Company"> 
+    <app-register-form-company
+    *ngIf="countries$ | async as countries;"
+    [countries]="countries"
+
+    ></app-register-form-company>
+</mat-tab>
+
+</mat-tab-group>

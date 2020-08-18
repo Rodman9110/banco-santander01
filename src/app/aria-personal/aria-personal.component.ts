@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthenticationService } from '../services/authentication.service';
+import { CustomersService } from '../services/customers.service';
 
 @Component({
   selector: 'app-aria-personal',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AriaPersonalComponent implements OnInit {
 
-  constructor() { }
+  customer$: Observable<any>;
+  token: any;
+  constructor(
+     private authentication: AuthenticationService,
+     private customersServices: CustomersService,
+     ) { }
 
   ngOnInit(): void {
+    this.token = this.authentication.getToken();
+    console.log(this.token);
+    this.customer$ = this.customersServices.getCustomer$(this.token);
+
   }
 
 }

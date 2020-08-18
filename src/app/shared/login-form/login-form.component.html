@@ -1,6 +1,6 @@
 
 <div  >
-    <img src="assets/img/icons/santa04.png" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
+    <img src="assets/img/icons/santa03.png" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
 
 
 
@@ -8,13 +8,23 @@
     <mat-card-title><img src="assets/img/icons/santanderIcono.png"  width="100px" height="100px"></mat-card-title>
 <mat-card-content>
 <form id="contactForm" [formGroup]="loginForm"  novalidate (ngSubmit)="ClickVerificationLogin()">
+
   <p>
-    <mat-form-field>
-      <input matInput type="text" placeholder="dni" formControlName="dni" class="form-control"  name="dni">
+    <mat-form-field appearance="outline">
+      <mat-label>Type of Document</mat-label>
+      <mat-select  formControlName="type">
+        <mat-option   value="dni"><p>DNI</p> </mat-option>
+        <mat-option   value="cif"><p>CIF</p> </mat-option>
+      </mat-select>
+    </mat-form-field>
+ </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <input matInput type="text" placeholder="Nº User" formControlName="user" class="form-control"  name="user">
     </mat-form-field>
   </p>
   <p>
-    <mat-form-field>
+    <mat-form-field appearance="outline">
        <input matInput type="password" placeholder="password" formControlName="password" class="form-control"  name="password">       
     </mat-form-field>
   </p>
@@ -22,7 +32,8 @@
   <p *ngIf="error" class="error">
     {{ error }}
   </p>
-  <a  (click)="PageRegister()">Regístrate ahora</a>
+  <!-- <a  (click)="PageRegister()">Regístrate ahora</a> -->
+  <button mat-button  (click)="PageRegister()">Register now</button>
   <div class="button">
     
     <button 

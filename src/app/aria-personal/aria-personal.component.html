@@ -1,2 +1,12 @@
 
-<app-aria-personal-dashboard></app-aria-personal-dashboard>
+<app-aria-personal-dashboard 
+*ngIf="customer$ | async as customer; else empty"
+[customer]="customer"
+>
+</app-aria-personal-dashboard>
+
+
+
+<ng-template #empty>
+    <app-loading></app-loading>
+</ng-template> 

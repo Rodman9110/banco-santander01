@@ -15,12 +15,13 @@
       <!-- <a mat-list-item routerLink="profile"> <mat-icon aria-hidden="false" aria-label="">local_post_office</mat-icon>Buzon</a> -->
 
 
-      <nav >
+      <nav *ngIf="token">
         <button mat-button routerLink="home" ><mat-icon aria-hidden="false" aria-label="">home</mat-icon> Home</button>
         <button mat-button routerLink="buzon" ><mat-icon aria-hidden="false" aria-label="">local_post_office</mat-icon> Buzon</button>
         <button mat-button routerLink="aria-personal" ><mat-icon aria-hidden="false" aria-label="">person</mat-icon> Area Peresonal </button>
         <button mat-button routerLink="sofia" ><mat-icon aria-hidden="false" aria-label="">equalizer</mat-icon> SO:FIA</button>
-        <button mat-button routerLink="ff" ><mat-icon aria-hidden="false" aria-label="">disabled_by_default</mat-icon> Disconnected</button>
+        <button mat-button routerLink="bank_operations" ><mat-icon aria-hidden="false" aria-label="">euro</mat-icon> Bank Operations</button>
+        <button mat-button (click)="Logout()" ><mat-icon aria-hidden="false" aria-label="">disabled_by_default</mat-icon> Disconnected</button>
         
       </nav>
       

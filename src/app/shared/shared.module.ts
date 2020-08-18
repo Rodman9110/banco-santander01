@@ -14,12 +14,16 @@ import { HomeDashboardComponent } from './home-dashboard/home-dashboard.componen
 import { BuzonDashboardComponent } from './buzon-dashboard/buzon-dashboard.component';
 import { LoadingComponent } from './loading/loading.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import { MatSelectModule } from '@angular/material/select';
+import { BankOperationsFormComponent } from './bank-operations-form/bank-operations-form.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { RegisterFormCompanyComponent } from './register-form-company/register-form-company.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
 @NgModule({
-  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent],
+  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent],
   imports: [
     CommonModule,
     MatGridListModule,
@@ -31,9 +35,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSelectModule,
+    MatTabsModule
     
   ],
-  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent]
+  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent]
 })
 export class SharedModule { }
