@@ -17,8 +17,8 @@ export class HttpLoginService {
     console.log(login);
     return this.http.post<any>(url, login);
   }
-  public postAddLogin(type, user,password){
+  public postAddLogin(type, user_code,password){
     const url = this.URL_ADD_LOGIN;
-    return this.http.post<any>(url,{"type":type,"user":user,"password":password});
+    return this.http.post<any>(url,{"type":type,"user_code":user_code,"password":password});
   }
 }

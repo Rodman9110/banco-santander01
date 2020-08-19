@@ -26,7 +26,7 @@ export class LoginFormComponent implements OnInit {
     
     this.loginForm = this.formBuilder.group({
       type:['', Validators.required], 
-      user:['', Validators.required],
+      user_code:['', Validators.required],
       password:['', Validators.required]   
      });
   }
@@ -44,8 +44,8 @@ export class LoginFormComponent implements OnInit {
         this.error = "Wrong username or password."
       }
       else{
-        console.log(data.user);
-        this.authentication.setToken(data.user);
+        console.log(data.user_code);
+        this.authentication.setToken(data.user_code);
         this.router.navigate(['']);
       }
     },
