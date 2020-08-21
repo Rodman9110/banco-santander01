@@ -23,3 +23,13 @@
 .dashboard-card-content {
   text-align: center;
 }
+.datosPersonales{
+  display: flex;
+  justify-content: flex-start;
+}
+.titleDatosPersonales{
+  color: rgb(156, 31, 31);
+  display: flex;
+  justify-content: flex-start;
+
+}

@@ -16,12 +16,22 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Herey</div>
-          <ul>
-            <h2>{{customer.first_name}} {{customer.last_name}}</h2>
-            <h2>{{customer.dni}}</h2>
+         <hr>
+         
+            <h2 class="titleDatosPersonales"><mat-icon aria-hidden="false" aria-label="">person_outline</mat-icon>  {{customer.first_name}} {{customer.last_name}}</h2>
+            <p class="datosPersonales"><mat-icon aria-hidden="false" aria-label="">email</mat-icon> : {{customer.email}}</p>
+            <p class="datosPersonales"><mat-icon aria-hidden="false" aria-label="">location_on</mat-icon>: {{customer.direction}}</p>
+            <!-- <div *ngFor="let country of countries | async">
+              <p>{{country}}</p>
+            </div> -->
+            <p class="datosPersonales"> <mat-icon aria-hidden="false" aria-label="">language</mat-icon>: {{countries.name}}</p>
+            <div class="datosPersonales"><img src="https://www.countryflags.io/{{countries.code}}/shiny/32.png" alt="" class="flags">
             
-        </ul>
+            </div>
+            
+
+            
+        
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

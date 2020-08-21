@@ -2,6 +2,9 @@
 <app-aria-personal-dashboard 
 *ngIf="customer$ | async as customer; else empty"
 [customer]="customer"
+[countries]="countries$ | async"
+
+
 >
 </app-aria-personal-dashboard>
 
