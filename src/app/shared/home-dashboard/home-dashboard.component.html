@@ -94,15 +94,22 @@
   </mat-grid-list>
 
 
-  <h1 class="mat-h1">Ultimos movimientos</h1>
-  <mat-grid-list *ngFor="let account of accounts " cols="2" rowHeight="350px">
+  <h1 class="mat-h1">Last movements</h1>
+  <mat-grid-list *ngFor="let AllOperationsUser of AllBankOperationsUser " cols="2" rowHeight="300px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card"  >
         <mat-card-header>
           <mat-card-title>
-            {{card.title}}
+            <!-- {{card.title}} -->
+            <h1 class="dateTitle">{{AllOperationsUser.date_operation | date }}</h1>
            
-            <h2>{{account.n_account}}</h2>
+            <!-- <p>{{AllOperationsUser.n_account}}<p>
+            <p>{{AllOperationsUser.type}}</p>
+            <p>{{AllOperationsUser.quantity}}</p>
+            <p>{{AllOperationsUser.balance}}</p>
+            <p>{{AllOperationsUser.date_operation}}</p> -->
+
+          
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -113,7 +120,15 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <!-- <div>Card Content Here</div> -->
+            <!-- <p>{{AllOperationsUser.n_account}}<p>
+            <p>{{AllOperationsUser.type}}</p> -->
+            <hr>
+            <h2 class="concept">{{AllOperationsUser.concept}}</h2>
+            <h1 class="concept">{{AllOperationsUser.quantity}} €</h1>
+            <p class="n_account">{{AllOperationsUser.balance}} €</p> 
+            <hr>
+            <p>{{AllOperationsUser.date_operation | date:'medium' }}</p>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

@@ -13,7 +13,8 @@ import { BankOperationsService } from '../services/bank-operations.service';
 export class HomeComponent implements OnInit {
 
   accounts$: Observable<any>;
-  accountsBalances$: Observable<any>;
+  accountsBalances$: Observable<any[]>;
+  AllBankOperationsUser$: Observable<any[]>;
   token: any;
   TotalBalance$;
   constructor(
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
     this.accounts$ = this.bankAccountService.getBankAccounts$(this.token);
     this.TotalBalance$ = this.bankOperationsService.getTotalBalance$(this.token);
     this.accountsBalances$ = this.bankOperationsService.getAccountBalance$(this.token);
+    this.AllBankOperationsUser$ = this.bankOperationsService.getAllBankOperationsUser$(this.token);
     // this.TotalBalance$ = this.bankOperationsService.getLastBalance$(this.accounts$);
     // console.log(this.TotalBalance$);
     console.log(this.TotalBalance$);

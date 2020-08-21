@@ -52,3 +52,10 @@
   justify-content: flex-end; */
   margin-top: -50px;
 }
+.dateTitle{
+  color: rgb(156, 31, 31);
+}
+.concept{
+  display: flex;
+  justify-content: flex-start;
+}

@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BankOperationsService } from 'src/app/services/bank-operations.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-bank-operations-form',
@@ -37,6 +38,7 @@ export class BankOperationsFormComponent implements OnInit {
     private bankOperationsService: BankOperationsService,
     private breakpointObserver: BreakpointObserver,
     private formBuilder: FormBuilder,
+    private _snackBar: MatSnackBar
   
     ) {
 
@@ -58,7 +60,19 @@ export class BankOperationsFormComponent implements OnInit {
     
     this.bankOperationsService.AddBankOperation$(this.bankOperationsForm.value).subscribe();  
     console.log(this.bankOperationsForm.value);
+    this.openSnackBarBankOperation(this.bankOperationsForm.value.type);
+    this.bankOperationsForm.reset();
 
+  }
+
+  openSnackBarBankOperation(data) {
+    this._snackBar.open('confirmed operation '+data, 'OK!', {
+      duration: 5000,
+      panelClass: ['blue-snackbar'],
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    
+    });
   }
 
 }

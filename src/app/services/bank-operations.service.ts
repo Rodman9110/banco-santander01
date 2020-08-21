@@ -13,6 +13,7 @@ export class BankOperationsService {
   URL_GET_LAST_BALANCE = 'http://localhost:8081/bank_operations/getLastBalance';
   URL_GET_TOTAL_BALANCE = 'http://localhost:8081/bank_operations/getTotalBalance';
   URL_GET_ACCOUNTS_BALANCES ='http://localhost:8081/bank_operations/getAccountBalance';
+  URL_GET_ALL_BANK_OPERATIONS_USER ='http://localhost:8081/bank_operations/getAllBankOperationsUser';
 
 
   constructor(private http: HttpClient) { }
@@ -50,6 +51,12 @@ export class BankOperationsService {
     const url = this.URL_GET_ACCOUNTS_BALANCES+"/"+data;
     console.log(url);
     return this.http.get<any>(url);
+  }
+  public getAllBankOperationsUser$(data){
+    const url = this.URL_GET_ALL_BANK_OPERATIONS_USER+"/"+data;
+    console.log(url);
+    return this.http.get<any>(url);
+
   }
 
 

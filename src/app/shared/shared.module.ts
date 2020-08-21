@@ -19,7 +19,7 @@ import { BankOperationsFormComponent } from './bank-operations-form/bank-operati
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { RegisterFormCompanyComponent } from './register-form-company/register-form-company.component';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -37,7 +37,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatInputModule,
     MatProgressSpinnerModule,
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSnackBarModule
     
   ],
   exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent]
