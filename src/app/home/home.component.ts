@@ -13,7 +13,9 @@ import { BankOperationsService } from '../services/bank-operations.service';
 export class HomeComponent implements OnInit {
 
   accounts$: Observable<any>;
+  accountsBalances$: Observable<any>;
   token: any;
+  TotalBalance$;
   constructor(
     private authentication: AuthenticationService,
     private bankAccountService: BankAccountService,
@@ -24,6 +26,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.token = this.authentication.getToken();
     this.accounts$ = this.bankAccountService.getBankAccounts$(this.token);
+    this.TotalBalance$ = this.bankOperationsService.getTotalBalance$(this.token);
+    this.accountsBalances$ = this.bankOperationsService.getAccountBalance$(this.token);
+    // this.TotalBalance$ = this.bankOperationsService.getLastBalance$(this.accounts$);
+    // console.log(this.TotalBalance$);
+    console.log(this.TotalBalance$);
     console.log(this.accounts$);
   }
 

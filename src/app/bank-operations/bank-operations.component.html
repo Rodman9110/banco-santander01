@@ -1,3 +1,6 @@
-<p>bank-operations works!</p>
 
-<app-bank-operations-form></app-bank-operations-form>
+
+<app-bank-operations-form
+*ngIf="accounts$ | async as accounts;"
+[accounts]="accounts"
+></app-bank-operations-form>

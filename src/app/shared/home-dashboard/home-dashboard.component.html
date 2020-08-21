@@ -30,8 +30,11 @@
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
-          <mat-card-title>
-            My Money
+          <mat-card-title> 
+            <!-- My Money
+            <br> -->
+            
+            <!-- <strong class="balance"SIZE=10>{{TotalBalance}} €</strong> -->
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -42,8 +45,10 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Herey</div>
-         
+          <!-- <div>Card Content Herey</div> -->
+          <p class="balance" >Balance total</p>
+          <h1 class="balance">{{TotalBalance}} €</h1>
+
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -51,14 +56,15 @@
 
 
   <h1 class="mat-h1">Accounts</h1>
-  <mat-grid-list *ngFor="let account of accounts " cols="2" rowHeight="150px">
+  <mat-grid-list *ngFor="let accountsBalance of accountsBalances" cols="2" rowHeight="200px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card"  >
         <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
+          <mat-card-title >
+            <!-- {{card.title}} -->
+            
            
-            <h2>{{account.n_account}}</h2>
+            
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -69,7 +75,19 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+
+          <!-- <div>Card Content Here</div> -->
+          <h2 class="titulo">Account Number:</h2>
+          <div>
+          <h4 class="n_account">{{accountsBalance.n_account}} </h4>
+          <h1 class="balanceAccount">{{accountsBalance.balance}} €</h1>
+          </div>
+         
+          
+          <!-- <h2>{{accountsBalance.balance}}</h2> -->
+          <!-- <p *ngIf=accountsBalances>{{balance}}</p> -->
+          <!-- <p>{{accountsBalance.n_account}}</p> -->
+          
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

@@ -1,1 +1,100 @@
-<p>bank-operations-form works!</p>
+<div class="grid-container">
+  <h1 class="mat-h1">Bank Operations</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+
+
+
+
+          <mat-card class="matBankOperations">
+            <mat-card-title><img src="assets/img/icons/santanderIcono.png"  width="100px" height="100px"></mat-card-title>
+            <!-- <mat-card-title><img src="assets/img/icons/SantanderLogoBlack.png"  width="200px" height="80px"></mat-card-title> -->
+        <mat-card-content>
+        <form id="contactForm" [formGroup]="bankOperationsForm"  novalidate (ngSubmit)="ClickRunBankOperation()">
+        
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Nº Account</mat-label>
+              <mat-select  formControlName="n_account">
+                <mat-option *ngFor="let account of accounts"  value="{{account.n_account}}"><p> {{account.n_account }}</p> </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p> 
+          <!-- <p>
+            <mat-form-field appearance="outline">
+              <input matInput type="text" placeholder="Nº Account" formControlName="n_account" class="form-control"  name="n_account">
+            </mat-form-field>
+          </p> -->
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Type of Operation</mat-label>
+              <mat-select  formControlName="type">
+                <mat-option   value="income"><p>Income</p> </mat-option>
+                <mat-option   value="expense"><p>Expense</p> </mat-option>
+              </mat-select>
+            </mat-form-field>
+         </p>
+          
+         <p>
+         <mat-form-field appearance="outline">
+            <mat-label>Quantity</mat-label>
+            <input matInput type="number" placeholder="Quantity" formControlName="quantity" class="form-control"  name="quantity">
+            <span matPrefix>€&nbsp;</span>
+            <!-- <span matSuffix>.00</span> -->
+          </mat-form-field>  
+         </p>
+          
+
+          <p>
+            <mat-form-field appearance="outline">
+              <!-- <input matInput type="text" placeholder="Concept" formControlName="concept" class="form-control"  name="concept" > -->
+              <textarea rows="2" cols="50" matInput placeholder="Concept" formControlName="concept" class="form-control"  name="concept"></textarea>
+            </mat-form-field>
+          </p>
+        
+          <p *ngIf="error" class="error">
+            {{ error }}
+          </p>
+          <!-- <a  (click)="PageRegister()">Regístrate ahora</a> -->
+          <!-- <button mat-button  (click)="PageRegister()">Register now</button> -->
+          <div class="button">
+            
+            <button 
+            type="submit"
+            id="btnSubmit" 
+            mat-raised-button color="primary">
+            Login
+          </button>
+          </div>
+        
+        </form>
+        </mat-card-content>
+        </mat-card>
+
+
+
+
+
+
+
+          <!-- <div>Card Content Here</div> -->
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+

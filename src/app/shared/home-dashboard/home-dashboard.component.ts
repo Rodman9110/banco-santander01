@@ -12,7 +12,10 @@ import { Observable } from 'rxjs';
 export class HomeDashboardComponent {
 
   @Input() accounts;
+  @Input() TotalBalance: number;
+  @Input() accountsBalances: any[];
   bankOperations: Observable<any>;
+  prueva: any;
 
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
@@ -40,9 +43,11 @@ export class HomeDashboardComponent {
 
 
   ngOnInit(): void {
-    
-    this.bankOperations = this.bankOperationsService.getLastBankOperations$(this.accounts);
+    // this.TotalBalance = this.bankOperationsService.getLastBalance$(this.accounts);
+    // this.bankOperations = this.bankOperationsService.getLastBankOperations$(this.accounts);
     console.log(this.bankOperations);
-    console.log(this.accounts);
+    console.log(this.accountsBalances);
+    console.log(this.TotalBalance);
+    
   }
 }

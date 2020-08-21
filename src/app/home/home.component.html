@@ -1,6 +1,9 @@
 <app-home-dashboard
 *ngIf="accounts$ | async as accounts; else empty"
 [accounts]="accounts"
+[TotalBalance] = "TotalBalance$ | async"
+[accountsBalances] = "accountsBalances$ | async"
+
 
 ></app-home-dashboard>
 

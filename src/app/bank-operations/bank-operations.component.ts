@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BankAccountService } from '../services/bank-account.service';
+import { BankOperationsService } from '../services/bank-operations.service';
+import { Observable } from 'rxjs';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-bank-operations',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BankOperationsComponent implements OnInit {
 
-  constructor() { }
+  accounts$: Observable<any>;
+  token: any;
+  constructor(
+    private authentication: AuthenticationService,
+    private bankAccountService: BankAccountService,
+    private bankOperationsService: BankOperationsService
+  ) { }
 
   ngOnInit(): void {
+    this.token = this.authentication.getToken();
+    this.accounts$ = this.bankAccountService.getBankAccounts$(this.token);
   }
 
 }

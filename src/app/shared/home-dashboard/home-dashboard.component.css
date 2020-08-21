@@ -23,3 +23,32 @@
 .dashboard-card-content {
   text-align: center;
 }
+.balance{
+  color: rgb(65, 187, 218);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  display: flex;
+  justify-content: flex-start;
+  /* margin-left: auto; */
+}
+.n_account{
+
+  font-family: monospace;
+
+  display: flex;
+  justify-content: flex-start;
+}
+.titulo{
+  display: flex;
+  justify-content: flex-start;
+
+}
+.balanceAccount{
+
+ 
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  /* display: flex;
+  justify-content: flex-end; */
+  margin-top: -50px;
+}
