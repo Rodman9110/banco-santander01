@@ -94,6 +94,59 @@
   </mat-grid-list>
 
 
+
+
+  <h1 class="mat-h1">Credit Card</h1>
+  <mat-grid-list cols="2" *ngFor="let AllCreditCards of AllCreditCardsUser"  rowHeight="150px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title> 
+            <!-- My Money
+            <br> -->
+            
+            <!-- <strong class="balance"SIZE=10>{{TotalBalance}} €</strong> -->
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <!-- <div>Card Content Herey</div> -->
+          <!-- <p class="balance" >Balance total</p>
+          <h1 class="balance">{{TotalBalance}} €</h1> -->
+          <div>
+
+              <img src="assets/img/targetas/tarjeta-credito-red.png" class="img-card-credit" >
+
+              <h2 class="contenidoCard">Nunber Card: {{AllCreditCards.n_card}}</h2>
+
+              <h5 class="titleCard">{{AllCreditCards.n_card}}</h5>
+              <p>Number Account: {{AllCreditCards.n_account}}</p> 
+              
+
+          </div>
+         
+
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+
+
+
+
+
+
+
+
+
   <h1 class="mat-h1">Last movements</h1>
   <mat-grid-list *ngFor="let AllOperationsUser of AllBankOperationsUser " cols="2" rowHeight="300px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">

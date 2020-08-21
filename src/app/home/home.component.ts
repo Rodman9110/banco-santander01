@@ -3,6 +3,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { Observable } from 'rxjs';
 import { BankAccountService } from '../services/bank-account.service';
 import { BankOperationsService } from '../services/bank-operations.service';
+import { CreditCardService } from '../services/credit-card.service';
 
 
 @Component({
@@ -15,12 +16,14 @@ export class HomeComponent implements OnInit {
   accounts$: Observable<any>;
   accountsBalances$: Observable<any[]>;
   AllBankOperationsUser$: Observable<any[]>;
+  AllCreditCardsUser$: Observable<any[]>;
   token: any;
   TotalBalance$;
   constructor(
     private authentication: AuthenticationService,
     private bankAccountService: BankAccountService,
-    private bankOperationsService: BankOperationsService
+    private bankOperationsService: BankOperationsService,
+    private creditCardService: CreditCardService
    
   ) { }
 
@@ -30,6 +33,7 @@ export class HomeComponent implements OnInit {
     this.TotalBalance$ = this.bankOperationsService.getTotalBalance$(this.token);
     this.accountsBalances$ = this.bankOperationsService.getAccountBalance$(this.token);
     this.AllBankOperationsUser$ = this.bankOperationsService.getAllBankOperationsUser$(this.token);
+    this.AllCreditCardsUser$ = this.creditCardService.getCreditCardsUser$(this.token);
     // this.TotalBalance$ = this.bankOperationsService.getLastBalance$(this.accounts$);
     // console.log(this.TotalBalance$);
     console.log(this.TotalBalance$);

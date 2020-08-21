@@ -15,6 +15,7 @@ export class HomeDashboardComponent {
   @Input() TotalBalance: number;
   @Input() accountsBalances: any[];
   @Input() AllBankOperationsUser: any[];
+  @Input() AllCreditCardsUser: any[];
   bankOperations: Observable<any>;
   prueva: any;
 

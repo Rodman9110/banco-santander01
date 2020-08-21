@@ -59,3 +59,20 @@
   display: flex;
   justify-content: flex-start;
 }
+.img-card-credit{
+
+  width: 120px; height: 60px;
+  display: flex;
+  justify-content: flex-start;
+}
+.contenidoCard{
+
+  margin-top: -60px;
+}
+.titleCard{
+
+  font-family: monospace;
+  margin-top: -10px;
+  display: flex;
+  justify-content: flex-start;
+}
