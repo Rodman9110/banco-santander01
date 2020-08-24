@@ -3,6 +3,7 @@ import { CustomersService } from '../services/customers.service';
 import { CountriesService } from '../services/countries.service';
 import { Observable } from 'rxjs';
 import { HttpLoginService } from '../services/http-login.service';
+import { CompanyService } from '../services/company.service';
 
 @Component({
   selector: 'app-register',
@@ -18,6 +19,7 @@ export class RegisterComponent implements OnInit {
     private customersService: CustomersService,
     private countriesService: CountriesService,
     private httpLogin: HttpLoginService,
+    private companyService: CompanyService
 
   ) { }
 
