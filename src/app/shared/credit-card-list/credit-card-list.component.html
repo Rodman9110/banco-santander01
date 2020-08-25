@@ -1,0 +1,42 @@
+<div class="grid-container">
+
+<h1 class="mat-h1">Credit Card</h1>
+<mat-grid-list cols="2"    *ngFor="let creditCard of creditCards "  rowHeight="150px">
+  <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-card class="dashboard-card">
+      <mat-card-header>
+        <mat-card-title> 
+          <!-- My Money
+          <br> -->
+          
+          <!-- <strong class="balance"SIZE=10>{{TotalBalance}} €</strong> -->
+          <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item>Expand</button>
+            <button mat-menu-item>Remove</button>
+          </mat-menu>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="dashboard-card-content">
+        <!-- <div>Card Content Herey</div> -->
+        <!-- <p class="balance" >Balance total</p>
+        <h1 class="balance">{{TotalBalance}} €</h1> -->
+        <div>
+            <!-- <button class="buttonCard"><img src="assets/img/targetas/tarjeta-credito-red.png" class="img-card-credit" ></button> -->
+            <a href="/credit_card/{{creditCard.n_card}}"><input type="image" routerLink="'/credit_card/',creditCard.n_card" src="assets/img/targetas/tarjeta-credito-red.png" class="img-card-credit"  /></a>
+            <!-- <button  type="image" routerLink="'credit_cards',creditCard.n_card" src="assets/img/targetas/tarjeta-credito-red.png" class="img-card-credit" ></button> -->
+            <!-- <button  mat-raised-button color="primary" routerLink="['/credit_card',creditCard.n_card]">Detais<mat-icon>description</mat-icon></button>
+            <button  routerLink="[/credit_card/{{creditCard.n_card}}]" ><mat-icon aria-hidden="false" aria-label="">local_post_office</mat-icon> Buzon</button>
+            <a  href="/credit_card/{{creditCard.n_card}}">detalles</a> -->
+
+            <h2 class="contenidoCard">Nunber Card: {{creditCard.n_card}}</h2>
+
+            <h5 class="titleCard"></h5>
+            <h5 class="titleCard">{{creditCard.n_card}}</h5>
+            <p>Number Account: {{creditCard.n_account}}</p> 
+            
+
+        </div>
+    

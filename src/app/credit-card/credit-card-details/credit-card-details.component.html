@@ -1,0 +1,11 @@
+
+<app-credit-card-details-shared></app-credit-card-details-shared>
+<app-credit-card-details-shared
+*ngIf="creditCards$ | async as creditCards; else empty"
+[creditCards] = "creditCards"
+></app-credit-card-details-shared>
+
+
+<ng-template #empty>
+    <app-loading></app-loading>
+</ng-template> 

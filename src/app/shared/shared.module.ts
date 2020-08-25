@@ -20,10 +20,14 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { RegisterFormCompanyComponent } from './register-form-company/register-form-company.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CreditCardListComponent } from './credit-card-list/credit-card-list.component';
+import { CreditCardDetailsSharedComponent } from './credit-card-details-shared/credit-card-details-shared.component';
+
+
 
 
 @NgModule({
-  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent],
+  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent],
   imports: [
     CommonModule,
     MatGridListModule,
@@ -41,6 +45,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSnackBarModule
     
   ],
-  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent]
+  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent]
 })
 export class SharedModule { }

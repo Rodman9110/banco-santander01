@@ -1,0 +1,86 @@
+.grid-container {
+    margin: 20px;
+    margin-top: 3%;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+  }
+  
+  .dashboard-card {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+  
+  .more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  
+  .dashboard-card-content {
+    text-align: center;
+  }
+  .balance{
+    color: rgb(65, 187, 218);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+    display: flex;
+    justify-content: flex-start;
+    /* margin-left: auto; */
+  }
+  .n_account{
+  
+    font-family: monospace;
+  
+    display: flex;
+    justify-content: flex-start;
+  }
+  .titulo{
+    display: flex;
+    justify-content: flex-start;
+  
+  }
+  .balanceAccount{
+  
+   
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+    /* display: flex;
+    justify-content: flex-end; */
+    margin-top: -50px;
+  }
+  .dateTitle{
+    color: rgb(156, 31, 31);
+  }
+  .concept{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .img-card-credit{
+  
+    width: 120px; height: 60px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .contenidoCard{
+  
+    margin-top: -60px;
+  }
+  .titleCard{
+  
+    font-family: monospace;
+    margin-top: -10px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .buttonCard{
+    /* background-image: src( 'assets/img/targetas/tarjeta-credito-red.png' ); */
+    width: 120px; height: 60px;
+    display: flex;
+    justify-content: flex-start;
+
+  }
+  

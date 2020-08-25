@@ -121,7 +121,7 @@
           <h1 class="balance">{{TotalBalance}} €</h1> -->
           <div>
 
-              <img src="assets/img/targetas/tarjeta-credito-red.png" class="img-card-credit" >
+            <a href="credit_card/{{AllCreditCards.n_card}}"><input type="image" routerLink="'/credit_card/',creditCard.n_card" src="assets/img/targetas/tarjeta-credito-red.png" class="img-card-credit"  /></a>
 
               <h2 class="contenidoCard">Nunber Card: {{AllCreditCards.n_card}}</h2>
 
@@ -154,7 +154,7 @@
         <mat-card-header>
           <mat-card-title>
             <!-- {{card.title}} -->
-            <h1 class="dateTitle">{{AllOperationsUser.date_operation | date }}</h1>
+            <h1 class="dateTitle">{{AllOperationsUser.date_operation | date: 'LLL  dd' }}</h1>
            
             <!-- <p>{{AllOperationsUser.n_account}}<p>
             <p>{{AllOperationsUser.type}}</p>
