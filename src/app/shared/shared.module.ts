@@ -22,12 +22,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CreditCardListComponent } from './credit-card-list/credit-card-list.component';
 import { CreditCardDetailsSharedComponent } from './credit-card-details-shared/credit-card-details-shared.component';
+import { SofiaDashboardComponent } from './sofia-dashboard/sofia-dashboard.component';
+import { Loading02Component } from './loading02/loading02.component';
 
 
 
 
 @NgModule({
-  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent],
+  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent, SofiaDashboardComponent, Loading02Component],
   imports: [
     CommonModule,
     MatGridListModule,
@@ -45,6 +47,6 @@ import { CreditCardDetailsSharedComponent } from './credit-card-details-shared/c
     MatSnackBarModule
     
   ],
-  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent]
+  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent, SofiaDashboardComponent, Loading02Component]
 })
 export class SharedModule { }

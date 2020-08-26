@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono');
+
+:root {
+  --color-dark: #000;
+  --color-light: #fff;
+  --radius: .25rem;
+  --gray1: #333;
+  --gray2: #444;
+  --blue1: #90CAF9;
+  --blue2: #1E88E5;
+  --red1: #C62828;
+  --red2: #E57373;
+}
+
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-family: 'Fira Mono', monospace;
+  font-size: 18px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.timeout {
+  max-width: 80vw;
+  min-width: 320px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  font-size: 4rem;
+}
+
+.timeout > * {
+  margin: 0 .5rem;
+}
+
+.server {
+  position: relative;
+}
+
+.server .earth {
+    -webkit-transition: -webkit-filter 350ms ease;
+    transition: -webkit-filter 350ms ease;
+    transition: filter 350ms ease;
+    transition: filter 350ms ease, -webkit-filter 350ms ease;
+  }
+
+.server .flames {
+    position: absolute;
+    top: -40px;
+    opacity: 0;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: opacity 350ms ease, -webkit-transform 350ms ease;
+    transition: opacity 350ms ease, -webkit-transform 350ms ease;
+    transition: opacity 350ms ease, transform 350ms ease;
+    transition: opacity 350ms ease, transform 350ms ease, -webkit-transform 350ms ease;
+  }
+
+.progress {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 1rem;
+}
+
+.progress::-webkit-progress-bar,
+  .progress::-webkit-progress-value {
+    border-radius: var(--radius); 
+  }
+
+.progress::-webkit-progress-bar {
+    border-radius: var(--radius);
+    background: -webkit-gradient(
+      linear,
+      left top, left bottom,
+      color-stop(25%, var(--gray1)),
+      to(var(--gray2))
+    );
+    background: linear-gradient(
+      var(--gray1) 25%,
+      var(--gray2) 100%
+    );
+  }
+
+.progress::-webkit-progress-value {
+    -webkit-transition: background 600ms ease-in-out;
+    transition: background 600ms ease-in-out;
+    background: -webkit-gradient(
+      linear,
+      left top, left bottom,
+      color-stop(25%, var(--blue1)),
+      to(var(--blue2))
+    );
+    background: linear-gradient(
+      var(--blue1) 25%,
+      var(--blue2) 100%
+    );
+    box-shadow: 0 0 10px 0 rgba(255,255,255,.35);
+  }
+
+.content {
+  text-align: center;
+}
+
+.content h1, .content p {
+    padding: 0;
+    margin: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+    -webkit-transition:
+      opacity 600ms ease-in-out,
+      -webkit-transform 500ms ease-in-out;
+    transition:
+      opacity 600ms ease-in-out,
+      -webkit-transform 500ms ease-in-out;
+    transition:
+      transform 500ms ease-in-out,
+      opacity 600ms ease-in-out;
+    transition:
+      transform 500ms ease-in-out,
+      opacity 600ms ease-in-out,
+      -webkit-transform 500ms ease-in-out;
+  }
+
+.content p {
+    -webkit-transition-delay: 150ms;
+            transition-delay: 150ms;
+  }
+
+/* States */
+
+.user.is-dead {
+  -webkit-animation: roto .5s alternate infinite ease-in-out;
+          animation: roto .5s alternate infinite ease-in-out;
+}
+
+.server.is-dead .earth {
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+  }
+
+.server.is-dead .flames {
+    opacity: 1;
+    -webkit-animation:
+      burn 50ms alternate infinite ease-in-out,
+      smolder 500ms alternate infinite ease-in-out;
+            animation:
+      burn 50ms alternate infinite ease-in-out,
+      smolder 500ms alternate infinite ease-in-out;
+  }
+
+.progress.is-dead::-webkit-progress-value {
+  background: -webkit-gradient(linear,left top, left bottom,color-stop(25%, var(--red1)),to(var(--red2)));
+  background: linear-gradient(var(--red1) 25%,var(--red2) 100%);
+}
+
+.content.is-visible h1, .content.is-visible p {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+/* Animation */
+
+@-webkit-keyframes roto {
+  0%    { -webkit-transform: rotate(-15deg); transform: rotate(-15deg); }
+  100%  { -webkit-transform: rotate(15deg); transform: rotate(15deg); }
+}
+
+@keyframes roto {
+  0%    { -webkit-transform: rotate(-15deg); transform: rotate(-15deg); }
+  100%  { -webkit-transform: rotate(15deg); transform: rotate(15deg); }
+}
+
+@-webkit-keyframes burn {
+  0%    { -webkit-transform: scale(1) skewX(-2.5deg); transform: scale(1) skewX(-2.5deg); }
+  100%  { -webkit-transform: scale(1) skewX(2.5deg); transform: scale(1) skewX(2.5deg); }
+}
+
+@keyframes burn {
+  0%    { -webkit-transform: scale(1) skewX(-2.5deg); transform: scale(1) skewX(-2.5deg); }
+  100%  { -webkit-transform: scale(1) skewX(2.5deg); transform: scale(1) skewX(2.5deg); }
+}
+
+@-webkit-keyframes smolder {
+  to { -webkit-filter: brightness(1.5); filter: brightness(1.5); }
+}
+
+@keyframes smolder {
+  to { -webkit-filter: brightness(1.5); filter: brightness(1.5); }
+}
