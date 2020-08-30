@@ -1,0 +1,12 @@
+<p>bank-operations-table works!</p>
+
+
+<app-table-bank-operations-shared
+*ngIf="BankOperationsUser$ | async as BankOperationsUser; else empty"
+[BankOperationsUser]="BankOperationsUser"
+></app-table-bank-operations-shared>
+
+
+<ng-template #empty>
+    <app-loading></app-loading>
+</ng-template> 

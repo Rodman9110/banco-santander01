@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'bank_operations', loadChildren: () => import('./bank-operations/bank-operations.module').then(m => m.BankOperationsModule) },
   { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) },
   { path: 'credit_card', loadChildren: () => import('./credit-card/credit-card.module').then(m => m.CreditCardModule) },
-  { path: 'information', loadChildren: () => import('./information/information.module').then(m => m.InformationModule) }
+  { path: 'information', loadChildren: () => import('./information/information.module').then(m => m.InformationModule) },
+  { path: 'tableBankOperacions', loadChildren: () => import('./table-bank-operations/table-bank-operations.module').then(m => m.TableBankOperationsModule) }
 ];
 
 @NgModule({

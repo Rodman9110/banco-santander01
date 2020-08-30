@@ -148,6 +148,7 @@
 
 
   <h1 class="mat-h1">Last movements</h1>
+<a href="bankOperationTable">Tabla</a> 
   <mat-grid-list *ngFor="let AllOperationsUser of AllBankOperationsUser " cols="2" rowHeight="300px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card"  >
@@ -190,3 +191,5 @@
 
 
 </div>
+
+

@@ -3,8 +3,6 @@
 *ngIf="customer$ | async as customer; else empty"
 [customer]="customer"
 [countries]="countries$ | async"
-
-
 >
 </app-aria-personal-dashboard>
 
@@ -12,5 +10,11 @@
 
 <ng-template #empty>
     <!-- <app-loading></app-loading> -->
-    <app-loading></app-loading>
+    <!-- <app-loading></app-loading> -->
+    <app-area-personal-company
+    *ngIf="companies$ | async as company"
+    [company]="company"
+    [countries]="countriesCompany$ | async"
+    >
+    </app-area-personal-company>
 </ng-template> 

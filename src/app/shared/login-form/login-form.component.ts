@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpLoginService } from 'src/app/services/http-login.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { MongoDBService } from 'src/app/services/mongo-db.service';
 
 
 
@@ -14,13 +15,15 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class LoginFormComponent implements OnInit {
 
   @Input() error: string | null;
+  state: any ="open session";
   public loginForm: FormGroup;
 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
     private httpLogin: HttpLoginService,
-    private authentication: AuthenticationService
+    private authentication: AuthenticationService,
+    private mongoDBService: MongoDBService
        
   ) { 
     
@@ -44,6 +47,7 @@ export class LoginFormComponent implements OnInit {
         this.error = "Wrong username or password."
       }
       else{
+        this.mongoDBService.postSessionRegistration$(data.user_code,this.state).subscribe();
         console.log(data.user_code);
         this.authentication.setToken(data.user_code);
         this.router.navigate(['']);

@@ -24,12 +24,18 @@ import { CreditCardListComponent } from './credit-card-list/credit-card-list.com
 import { CreditCardDetailsSharedComponent } from './credit-card-details-shared/credit-card-details-shared.component';
 import { SofiaDashboardComponent } from './sofia-dashboard/sofia-dashboard.component';
 import { Loading02Component } from './loading02/loading02.component';
+import { AreaPersonalCompanyComponent } from './area-personal-company/area-personal-company.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { TableBankOperationsSharedComponent } from './table-bank-operations-shared/table-bank-operations-shared.component';
+
 
 
 
 
 @NgModule({
-  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent, SofiaDashboardComponent, Loading02Component],
+  declarations: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent, SofiaDashboardComponent, Loading02Component, AreaPersonalCompanyComponent, TableBankOperationsSharedComponent],
   imports: [
     CommonModule,
     MatGridListModule,
@@ -44,9 +50,12 @@ import { Loading02Component } from './loading02/loading02.component';
     MatProgressSpinnerModule,
     MatSelectModule,
     MatTabsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
     
   ],
-  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent, SofiaDashboardComponent, Loading02Component]
+  exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent, SofiaDashboardComponent, Loading02Component, AreaPersonalCompanyComponent, TableBankOperationsSharedComponent]
 })
 export class SharedModule { }

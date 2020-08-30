@@ -1,5 +1,5 @@
 <div class="grid-container">
-
+  <img src="assets/img/targetas/targetaCreditoPubli01.png" class="" >
 <h1 class="mat-h1">Credit Card</h1>
 <mat-grid-list cols="2"    *ngFor="let creditCard of creditCards "  rowHeight="150px">
   <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
@@ -37,6 +37,20 @@
             <h5 class="titleCard">{{creditCard.n_card}}</h5>
             <p>Number Account: {{creditCard.n_account}}</p> 
             
+            
+
+
 
         </div>
-    
+         
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+ <img src="assets/img/targetas/targetaCreditoPubli02.png" class="" >
+
+</div>
+
+        
+  

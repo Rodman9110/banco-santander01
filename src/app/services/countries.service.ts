@@ -8,6 +8,8 @@ export class CountriesService {
 
   URL_COUNTRIES = 'http://localhost:8081/api/countries';
   URL_GET_COUNTRIS_FOR_USER_CODE ='http://localhost:8081/api/getCountryForUserCode';
+  URL_GET_COUNTRIS_FOR_USER_CODE_COMPANY ='http://localhost:8081/api/getCountryForUserCodeCompany'
+
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +24,12 @@ export class CountriesService {
   }
   public getCountryForUserCode$(user_code){
     const url = this.URL_GET_COUNTRIS_FOR_USER_CODE+'/'+user_code;
+    console.log(url)
+    return this.http.get<any[]>(url);
+  }
+
+  public getCountryForUserCodeCompany$(user_code){
+    const url = this.URL_GET_COUNTRIS_FOR_USER_CODE_COMPANY+'/'+user_code;
     console.log(url)
     return this.http.get<any[]>(url);
   }

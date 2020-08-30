@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
+import { MongoDBService } from 'src/app/services/mongo-db.service';
 
 @Component({
   selector: 'app-nav-shell',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class NavShellComponent {
 token: any;
+state: any ="close session";
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -21,7 +23,8 @@ token: any;
   constructor(
     private router: Router,
     private breakpointObserver: BreakpointObserver,
-    private authentication: AuthenticationService
+    private authentication: AuthenticationService,
+    private mongoDBService: MongoDBService
     ) {}
 
     ngOnInit() {
@@ -34,6 +37,7 @@ token: any;
 
   Logout(){
     console.log("Logout")
+    this.mongoDBService.postSessionRegistration$(this.token,this.state).subscribe();
     this.authentication.logoutUser();
     // window.location.reload();
     this.router.navigate(["/login"])
