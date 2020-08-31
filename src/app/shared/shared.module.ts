@@ -29,6 +29,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { TableBankOperationsSharedComponent } from './table-bank-operations-shared/table-bank-operations-shared.component';
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+
 
 
 
@@ -53,7 +55,8 @@ import { TableBankOperationsSharedComponent } from './table-bank-operations-shar
     MatSnackBarModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    
     
   ],
   exports: [AriaPersonalDashboardComponent, LoginFormComponent, HomeDashboardComponent, BuzonDashboardComponent, LoadingComponent, BankOperationsFormComponent, RegisterFormComponent, RegisterFormCompanyComponent, CreditCardListComponent, CreditCardDetailsSharedComponent, SofiaDashboardComponent, Loading02Component, AreaPersonalCompanyComponent, TableBankOperationsSharedComponent]
