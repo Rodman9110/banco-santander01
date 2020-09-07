@@ -4,6 +4,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { CustomersService } from '../services/customers.service';
 import { CountriesService } from '../services/countries.service';
 import { CompanyService } from '../services/company.service';
+import { ContactsService } from '../services/contacts.service';
 
 @Component({
   selector: 'app-aria-personal',

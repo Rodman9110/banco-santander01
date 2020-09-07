@@ -1,0 +1,44 @@
+<p>contacts-form-shared works!</p>
+
+
+<mat-card>
+    <mat-card-title>Add Contact</mat-card-title>
+<mat-card-content>
+<form id="ContactsForm" [formGroup]="ContactsForm"  novalidate (ngSubmit)="ClickSaveContacts()">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>User Code</mat-label>
+      <input matInput type="text" placeholder="User Code" formControlName="user_code_receptor" class="form-control"  name="user_code_receptor">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Name Contact</mat-label>
+      <input matInput type="text" placeholder="Name Contact" formControlName="name_contact" class="form-control"  name="name_contact">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Account</mat-label>
+      <input matInput type="text" placeholder="Account" formControlName="account" class="form-control"  name="account">
+    </mat-form-field>
+  </p>
+  
+
+  <!-- <p *ngIf="error" class="error">
+    {{ error }}
+  </p> -->
+  <!-- <a  (click)="PageRegister()">Regístrate ahora</a> -->
+  <div class="button">
+    
+    <button 
+    type="submit"
+    id="btnSubmit" 
+    mat-raised-button color="primary">
+    Save
+  </button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>

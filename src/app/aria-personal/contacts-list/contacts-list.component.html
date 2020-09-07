@@ -1,0 +1,5 @@
+<p>contacts-list works!</p>
+<app-contacts-list-shared
+*ngIf="contacts$ | async as contacts;"
+[contacts]="contacts"
+></app-contacts-list-shared>

@@ -41,7 +41,7 @@
 
       <ng-container matColumnDef="date_operation">
         <th mat-header-cell *matHeaderCellDef> <h2>Date Operation</h2> </th>
-        <td mat-cell *matCellDef="let element"> {{element.date_operation}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.date_operation | date:'medium'}} </td>
       </ng-container>
     
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
